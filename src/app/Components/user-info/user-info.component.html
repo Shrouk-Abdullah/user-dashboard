@@ -1,0 +1,23 @@
+<div class="spinner-container" *ngIf="isLoading">
+  <mat-progress-spinner diameter="50"></mat-progress-spinner>
+</div>
+<div *ngIf="user">
+  <h2>User Details</h2>
+  <div class="user-info">
+    <div class="avatar">
+      <img [src]="user.avatar" alt="User Avatar" />
+    </div>
+    <div class="details">
+      <p><strong>Name:</strong> {{ user.first_name }} {{ user.last_name }}</p>
+      <p><strong>Email:</strong> {{ user.email }}</p>
+      <p><strong>ID:</strong> {{ user.id }}</p>
+      <!-- Add more user details here -->
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!user">
+  <p>User not found.</p>
+</div>
+
+<a mat-button (click)="goBack()">Back</a>
