@@ -4,12 +4,10 @@ a {
 }
 header {
   width: 90%;
-  margin: 15px;
+  margin: 36px 15px 80px;
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
-  margin-block: 50px;
-  margin-bottom: 80px;
   gap: 30px;
   color: #ffffff;
   .header-name {
