@@ -4,8 +4,7 @@ The User Dashboard App is a web application designed to display a list of users 
 
 ## Deployed Version
 
-You can access the deployed version of this application at [https://user-dashboard.com](https://users-dashboard-pzbbsvw5j-shroukabdullahs-projects.vercel.app/)
-
+You can access the deployed version of this application at [https://user-dashboard.com](https://users-dashboard-git-main-shroukabdullahs-projects.vercel.app/)
 
 
 ## Technologies Used
