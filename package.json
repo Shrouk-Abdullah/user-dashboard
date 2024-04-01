@@ -1,5 +1,5 @@
 {
-  "name": "todo-list-app",
+  "name": "user-dashboard",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:todo-list-app": "node dist/todo-list-app/server/server.mjs"
+    "serve:ssr:user-dashboard": "node dist/user-dashboard/server/server.mjs"
   },
   "private": true,
   "dependencies": {

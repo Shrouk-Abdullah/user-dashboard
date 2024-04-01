@@ -1,14 +1,63 @@
-/* user-dashboard.component.css */
-.user-card {
+a {
+  text-decoration: none;
+  color: #111;
+}
+header {
+  width: 90%;
+  margin: 15px;
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  margin: 10px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  margin-block: 50px;
+  margin-bottom: 80px;
+  gap: 30px;
+  color: #ffffff;
+  .header-name {
+    font-size: 28px;
+    font-family: serif;
+    font-weight: bold;
+  }
+  span {
+    font-size: 18px;
+    font-weight: 500;
+  }
+}
+
+.paginated-list {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .user-card {
+    min-width: 19.5vw;
+    max-width: 100%;
+    height: 250px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 80px;
+    margin: 10px;
+    margin-bottom: 59px;
+    border: 1px solid #ccc;
+    background-color: aliceblue;
+    border-radius: 18px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    div {
+      position: relative;
+      top: -26px;
+    }
+    button {
+      width: 100%;
+      background-color: #131c2b;
+    }
+    button:hover {
+      background-color: #1b273d;
+    }
+  }
 }
 
 .user-card:hover {
@@ -16,10 +65,15 @@
 }
 
 .user-avatar {
-  width: 100px;
-  height: 100px;
+  width: 128px;
+  height: 128px;
   border-radius: 50%;
   margin-bottom: 10px;
+  position: relative;
+  top: -59px;
+  border: 1px solid #ccc;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .user-name {
@@ -39,17 +93,19 @@
   align-items: center;
   height: 200px;
 }
+mat-spinner::ng-deep circle {
+  stroke: aliceblue;
+}
 
 /* Animation for search input */
 .search-input {
-  width: 300px;
+  max-width: 400px;
   height: 40px;
-  border: 1px solid #ccc;
   border-radius: 20px;
   padding: 0 15px;
-  transition: width 0.3s ease;
+  transition: max-width 0.3s ease;
 }
 
 .search-input:focus {
-  width: 400px;
+  max-width: 500px;
 }

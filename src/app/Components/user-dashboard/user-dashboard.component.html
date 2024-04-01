@@ -1,29 +1,35 @@
 <div class="spinner-container" *ngIf="isLoading">
-  <mat-progress-spinner diameter="50"></mat-progress-spinner>
+  <mat-spinner diameter="50"></mat-spinner>
 </div>
 
-<div>
-  <input
-    type="text"
-    class="search-input"
-    placeholder="Search by ID"
-    (input)="filterUsers($event)"
-    [(ngModel)]="search"
-  />
-</div>
-<div *ngIf="filteredUsers.length == 0">
-  <h3>Ther's no user with this id</h3>
-</div>
-<div *ngIf="filteredUsers.length > 0">
-  <div *ngIf="search > 0">
-    <h3>Filtered Users:</h3>
-  </div>
-  <div class="user-card" *ngFor="let user of filteredUsers">
-    <a [routerLink]="['/user', user.id]">
-      <img class="user-avatar" [src]="user.avatar" alt="User Avatar" />
-      <p class="user-name">{{ user.first_name }} {{ user.last_name }}</p>
-      <p class="user-id">ID: {{ user.id }}</p>
-    </a>
+<div class="container" *ngIf="!isLoading">
+  <header>
+    <div class="header-name">Users</div>
+    <input
+      type="text"
+      class="search-input"
+      placeholder="Search by ID"
+      (input)="filterUsers($event)"
+      [(ngModel)]="search"
+    />
+    <div *ngIf="filteredUsers.length > 0 && search > 0">
+      <span>Filtered Users:</span>
+    </div>
+  </header>
+  <div class="paginated-list">
+    <div *ngIf="filteredUsers.length == 0 && search > 0">
+      <h3>Ther's no user with this id</h3>
+    </div>
+    <div class="user-card" *ngFor="let user of filteredUsers">
+      <a [routerLink]="['/user', user.id]">
+        <img class="user-avatar" [src]="user.avatar" alt="User Avatar" />
+        <div>
+          <p class="user-name">{{ user.first_name }} {{ user.last_name }}</p>
+          <p class="user-id">ID: {{ user.id }}</p>
+          <button mat-raised-button color="accent">Show</button>
+        </div>
+      </a>
+    </div>
   </div>
 </div>
 

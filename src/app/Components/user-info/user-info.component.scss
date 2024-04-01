@@ -1,0 +1,93 @@
+.user-details-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: aliceblue;
+}
+mat-spinner::ng-deep circle {
+  stroke: aliceblue;
+}
+.details p {
+  font-size: 16px;
+  font-weight: 600;
+  color: #555;
+}
+.details strong {
+  font-weight: 400;
+}
+.avatar img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+
+  margin-block: 20px;
+
+  border: 1px solid #ccc;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.user-info {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.back-button {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.back-button button {
+  display: flex;
+  align-items: center;
+  width: auto;
+  padding: 10px;
+  margin: auto;
+  padding-right: 20px;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 4px;
+  background-color: #131c2b;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  span {
+    font-weight: 600;
+  }
+}
+
+.back-button button:hover {
+  background-color: #1b273d;
+}
+
+.back-button button mat-icon {
+  margin-right: 8px;
+}
+
+.not-found {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  z-index: 10;
+  h2 {
+    color: #ffffff;
+    font-size: 25px;
+  }
+  p {
+    color: rgb(214, 241, 248);
+    font-size: 20px;
+  }
+}
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}

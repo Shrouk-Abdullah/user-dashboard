@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../Services/user.service';
-import { ErrorHandlerService } from '../../Services/error-handler.service';
 
 @Component({
   selector: 'app-user-dashboard',
@@ -9,16 +8,13 @@ import { ErrorHandlerService } from '../../Services/error-handler.service';
 })
 export class UserDashboardComponent implements OnInit {
   users: any[] = [];
-  isLoading: boolean = true;
+  isLoading: boolean = false;
   errorMessage: string = '';
   filteredUsers: any[] = [];
   searchQuery: string = '';
   search: any;
 
-  constructor(
-    private userService: UserService,
-    private errorHandlerService: ErrorHandlerService
-  ) {}
+  constructor(private userService: UserService) {}
 
   ngOnInit(): void {
     this.loadUsers();
@@ -36,7 +32,7 @@ export class UserDashboardComponent implements OnInit {
         this.isLoading = false;
       },
       error: (error) => {
-        this.errorMessage = this.errorHandlerService.getErrorMessage(error);
+        // this.errorMessage = this.errorHandlerService.getErrorMessage(error);
         this.isLoading = false;
       },
     });
@@ -53,6 +49,5 @@ export class UserDashboardComponent implements OnInit {
     this.filteredUsers = this.users.filter((user) =>
       user.id.toString().includes(searchQuery)
     );
-    console.log(this.filteredUsers);
   }
 }
